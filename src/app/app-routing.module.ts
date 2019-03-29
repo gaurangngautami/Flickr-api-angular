@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-const routes: Routes = [];
+import { FlickrSearchComponent } from './flickr-search/flickr-search.component';
+const routes: Routes = [
+  {path:'' ,component: FlickrSearchComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

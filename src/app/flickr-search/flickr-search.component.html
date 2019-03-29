@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+              aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Flickr Search Bar</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input [(ngModel)]="searchTag" name="Seachbar" type="text" placeholder="Search Photos..." class="form-control">
+          <input style="margin: 5px" [(ngModel)]="per_page" name="perpage" type="number"  onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" placeholder="Default(20)" class="form-control">
+          <button style="margin: 5px" class="btn btn-success" (click)="getPhotos()">Search</button>
+        </div>
+      </form>
+    </div><!--/.navbar-collapse -->
+  </div>
+</nav>
+<br><br><br><br>
+<div class="container">
+<div class="row">
+
+
+    <div *ngFor="let photo of photos.photos.photo" class="col-xs-6 col-md-2">
+      <div class="thumbnail">
+        <img class="img-responsive" src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_m.jpg">
+        <div class="caption">
+        </div>
+      </div>
+    </div>
+  
+
+
+</div>
+</div>
